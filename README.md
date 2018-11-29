@@ -8,7 +8,7 @@ Over the last 5 years the percentage of children receiving no vaccines by age 2 
 
 ## Code Notes
 
-This repo builds all 3 visualizations using React, and the bottom-most chart is interactive by vaccine type. I've created the JSON files manually from the CDC survey data. 
+This repo builds all 3 visualizations using React, and the bottom-most chart is interactive by vaccine type. I've created the JSON files manually from the CDC survey data. Additionally the React project is split up into components, so App.js primarily manages state.
 
 ## Chart Notes
 
