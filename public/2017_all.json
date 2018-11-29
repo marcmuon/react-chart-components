@@ -1,0 +1,59 @@
+[
+ {
+   "Vaccine": "DTaP (≥3)",
+   "idx": 0,
+   "dark": true
+ },
+
+{
+  "Vaccine": "Poliovirus",
+  "idx": 1,
+  "dark": false
+},
+{
+  "Vaccine": "MMR",
+  "idx": 2,
+  "dark": false
+},
+{
+  "Vaccine": "Hib Primary",
+  "idx": 3,
+  "dark": false
+},
+
+
+{
+  "Vaccine": "HepB Birth",
+  "idx": 4,
+  "dark": false
+},
+{
+  "Vaccine": "Varicella",
+  "idx": 5,
+  "dark": false
+},
+{
+  "Vaccine": "PCV (≥3)",
+  "idx": 6,
+  "dark": false
+},
+
+{
+  "Vaccine": "HepA (≥1)",
+  "idx": 7,
+  "dark": false
+},
+
+{
+  "Vaccine": "Rotavirus",
+  "idx": 8,
+  "dark": false
+},
+{
+  "Vaccine": "Combined 7-vaccine",
+  "idx": 9,
+  "dark": false
+}
+
+
+]

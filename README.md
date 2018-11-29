@@ -1,44 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# CDC Vaccinations - React Viz
 
-## Available Scripts
+## Overview and Motivation
 
-In the project directory, you can run:
+This repo visually examines vaccination coverage among children aged 19–35 months. The source data is from the yearly CDC report on the same topic here: https://www.cdc.gov/mmwr/volumes/67/wr/mm6740a4.htm.
 
-### `npm start`
+Over the last 5 years the percentage of children receiving no vaccines by age 2 is rising. This is both alarming and surprising, and the goal of this project is to dig deeper into CDC data and determine why. 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Code Notes
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+This repo builds all 3 visualizations using React, and the bottom-most chart is interactive by vaccine type. I've created the JSON files manually from the CDC survey data. 
 
-### `npm test`
+## Chart Notes
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I've arranged the charts in my viz vertically to show the story of my takeaways from the study. An intro paragraph quote at the top my viz underscores what I want the viewer to think about when scrolling down through the viz. I've tried to highlight the relevant proportions between the items on each chart, so the viewer gets a good visual indicator of the differerence for the groups on each separate graph. The first chart sets the stage with a 2013-2017 trend, and the latter two charts dive into 2017 specific survey data.
 
-### `npm run build`
+## Data Notes
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This data is based on CDC survey data. Hence, there's naturally statistical error that will arise. The CDC report contains the relevant confidence intervals for the data I've extracted into the viz. Specifically, they use 95% confidence intervals with their estimates, which means that 95% of the time upon repeated sampling the true pop. parameter would be bracketed in their reported interval. I didn't include these in my viz, but after examining the intervals I don't feel that their exclusion changes the story or insights. That being said I am thinking of ways to integrate them moving forward into the viz.

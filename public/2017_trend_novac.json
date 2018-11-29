@@ -1,0 +1,32 @@
+[
+ {
+   "year": 2013,
+   "pct_est": 0.7,
+   "ci_low": 0.5,
+   "ci_high": 1.1
+ },
+ {
+   "year": 2014,
+   "pct_est": 0.8,
+   "ci_low": 0.6,
+   "ci_high": 1
+ },
+ {
+   "year": 2015,
+   "pct_est": 0.8,
+   "ci_low": 0.6,
+   "ci_high": 1
+ },
+ {
+   "year": 2016,
+   "pct_est": 0.8,
+   "ci_low": 0.6,
+   "ci_high": 1
+ },
+ {
+   "year": 2017,
+   "pct_est": 1.1,
+   "ci_low": 0.9,
+   "ci_high": 1.4
+ }
+]
