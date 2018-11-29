@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
+import Splash from './components/Splash/Splash.js';
+import Header from './components/Header/Header.js';
+import Graph from './components/Graph/Graph.js';
+import InsuranceGraph from './components/InsuranceGraph/InsuranceGraph.js';
+import SelectorList from './components/SelectorList/SelectorList.js';
+
 
 class App extends Component {
   state = {
@@ -8,9 +14,10 @@ class App extends Component {
     vac: [],
     titles: [],
     buttons: [],
+    mult: 15,
   }
 
-  doFetch = () => {
+  componentDidMount() {
     fetch('/2017_trend_novac.json')
       .then(response => response.json())
       .then(data => {        
@@ -43,7 +50,6 @@ class App extends Component {
         });
       });
   }
-
 
   barGen = (index) => {
     if (index === 0) {
@@ -219,72 +225,31 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    this.doFetch();
-  }
-
   render() {    
     return (
       <div className="App">
+        <Splash />
         <div className="Container">
-          <div className="Header">
-            <div>% of US Children with No Vaccinations, 2013-2017</div>
-          </div>
-          <div className="Graph">
-            <div className="Graph-Description">For children aged 19–35 months </div>
-              <div className="Graph-BarChart">
-              {
-                this.state.yearly.map((year) => (
-                  <div className="Graph-Bar" style={{height: year.pct_est*80 + "%"}} >
-                    {year.year}: {year.pct_est}% 
-                  </div>
-                ))
-              }
-              </div>
-          </div>
+          <Header>% of US Children with No Vaccinations, 2013-2017</Header>  
+          <Graph
+          array={this.state.yearly}  >
+          </Graph>
         </div>
         <div className="Container">
-          <div className="Header">
-            <div>% of US Children with No Vaccinations by Insurance Type, 2017</div>
-          </div>
-          <div className="Graph">
-            <div className="Graph-Description">For children aged 19–35 months</div>
-              <div className="Graph-BarChart">
-              {
-                this.state.novac.map((ins) => (
-                  <div className="Graph-Bar" style={{height: ins.pct_est*15 + "%"}} >
-                    {ins.insurance}: {ins.pct_est}% 
-                  </div>
-                ))
-              }
-              </div>
-          </div>
+          <Header>% of US Children with No Vaccinations by Insurance Type, 2017</Header>
+          <InsuranceGraph
+          array={this.state.novac}
+          multiplier={this.state.mult}  >
+          </InsuranceGraph>
         </div>
         <div className="Container">
-          <div className="Header">
-            <div>% of US Children Receiving Certain Vaccinations by Insurance Type, 2017 </div>
-          </div>
-            <div className="Linklist" id="list">
-            {
-              this.state.titles.map((title, index) => ( 
-                  <button className={title.dark === true ? "Button-Dark": "Button-Light"} onClick={() => this.barGen(index)} >{title.Vaccine}</button>
-                
-                  ))
-            }
-            </div>
-            <div className="Graph">
-              <div className="Graph-Description">For children aged 19–35 months </div>
-                
-                <div className="Graph-BarChart">
-                {
-                  this.state.vac.map((ins) => (
-                    <div className="Graph-Bar" style={{height: ins.pct_est + "%"}} >
-                    {ins.insurance}: {ins.pct_est}% 
-                    </div>
-                  ))
-                }
-                </div>
-            </div>
+          <Header>% of US Children Receiving Certain Vaccinations by Insurance Type, 2017</Header>
+            <SelectorList array={this.state.titles}
+            gotClicked={this.barGen} ></SelectorList>
+            <InsuranceGraph
+          array={this.state.vac}
+          multiplier={this.state.mult/15}  >
+          </InsuranceGraph>
         </div>
       </div>
     );

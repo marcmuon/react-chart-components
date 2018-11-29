@@ -1,0 +1,38 @@
+.Graph-BarChart {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-top: 15px;
+    height: 500px;
+  }
+  
+  .Graph-Bar {
+    width: 15%;
+    transform: translate3d(0, 0, 0);
+    transition: transform 2s,
+                box-shadow 2s,
+                filter 5s;
+    background-color: #036564;
+    font-family: 'Special Elite', cursive;
+    color: #e8ddcb;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    text-align: center;
+  }
+  
+  .Graph-Bar:hover {
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transform: translate3d(0, 0, 200px);
+    filter: contrast(2.0);
+  }
+  
+  .Graph-Description {
+    font-family: 'Special Elite', cursive;
+    color: #036564;
+    font-size: 30px;
+    padding-top: 55px;
+    padding-left: 40px;
+  }
