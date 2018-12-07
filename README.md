@@ -4,7 +4,11 @@
 
 This repo visually examines vaccination coverage among children aged 19–35 months. The source data is from the yearly CDC report on the same topic here: https://www.cdc.gov/mmwr/volumes/67/wr/mm6740a4.htm.
 
-Over the last 5 years the percentage of children receiving no vaccines by age 2 is rising. This is both alarming and surprising, and the goal of this project is to dig deeper into CDC data and determine why. 
+Over the last 5 years the percentage of children receiving no vaccines by age 2 is rising. This is both alarming and surprising, and the goal of this project is to dig deeper into CDC data and determine why.
+
+## Demo
+
+Heroku demo here (takes maybe 30 seconds to load as on a cached free server): https://marcmuon.github.io/bar-chart-selector-react/
 
 ## Code Notes
 
